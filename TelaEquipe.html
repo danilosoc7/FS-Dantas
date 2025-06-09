@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FS Dantas - Equipe">
+  <title>Equipe | FS Dantas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #02133b;
+  color: white;
+}
+.section{
+  scroll-margin-top: 80px;
+}
+
+.perfil-membroAzul {
+  background: url('imgTelas/FundoEquipeContato.svg') no-repeat center center / cover;
+  padding-top: 20px;
+}
+
+.perfil-membroBranco {
+  background: url('imgTelas/FundoEquipeContatoBranco.svg') no-repeat center center / cover;
+}
+
+.perfil-containerAzul,
+.perfil-containerBranco {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px 60px 20px;
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.perfil-containerBranco {
+  flex-direction: row-reverse;
+}
+
+.perfil-foto {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-foto img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-infoAzul,
+.perfil-infoBranco {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.perfil-infoAzul h2,
+.perfil-infoBranco h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.perfil-infoAzul h2 {
+  color: white;
+}
+
+.perfil-infoBranco h2 {
+  color: #001138;
+}
+
+.perfil-infoAzul h3,
+.perfil-infoBranco h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.perfil-infoAzul h3 {
+  color: #5b88cb;
+}
+
+.perfil-infoBranco h3 {
+  color: #004bbb;
+}
+
+.perfil-infoAzul p,
+.perfil-infoBranco p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.perfil-infoBranco p {
+  color: #001138;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ffffff;
+  color: #000;
+  font-size: 1rem;
+}
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <a href="index.html" class="logo-link">
+          <img src="imgIcones/Logo FSDantasBranca.svg" height="72" width="72">
+        </a>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#quem-somos">Quem Somos</a>
+        <a href="index.html#o-que-fazemos">O Que Fazemos</a>
+        <a href="index.html#cases">Cases</a>
+        <a href="TelaEquipe.html">Equipe</a>
+        <a href="index.html#equipe-contato">Contato</a>
+      </div>
+      <div class="nav-social">
+        <a href="#"><img src="imgIcones/InstagramLogo.svg" alt="Instagram" /></a>
+        <a href="#"><img src="imgIcones/TelegramLogo.svg" alt="Telegram" /></a>
+        <a href="#"><img src="imgIcones/WhatsAppLogo.svg" alt="WhatsApp" /></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PERFIS -->
+    <section id="Frederico">
+    <div class="perfil-membroAzul ">
+    <!-- Frederico -->
+    <div class="perfil-containerAzul">
+      <div class="perfil-foto">
+        <img src="imgEquipe/FredDantas.jpeg" alt="Frederico Dantas" />
+      </div>
+      <div class="perfil-infoAzul">
+        <h2>Frederico Dantas</h2>
+        <h3>Head de Novos Negócios</h3>
+        <p>Mais de 15 anos de experiência nos mercados financeiro e imobiliário. Atua com fusões, aquisições, estruturação de crédito e análise econômica.</p>
+        <p>Graduado em Economia pela UFRJ, com especialização em Finanças Corporativas.</p>
+      </div>
+    </div>
+    </div>
+    </section>
+
+   <section id="Marcos">
+    <div class="perfil-membroBranco ">
+    <!-- Marcos -->
+    <div class="perfil-containerBranco">
+      <div class="perfil-foto">
+        <img src="imgEquipe/MarcosHenrique.jpeg" alt="Marcos Henrique" />
+      </div>
+      <div class="perfil-infoBranco">
+        <h2>Marcos Henrique Echternacht</h2>
+        <h3>Head de Equity Imobiliário</h3>
+        <p>Economista e Contador por formação, possui MBA em Finanças pelo IBMEC. Com mais de 30 anos de experiência no mercado financeiro, atuou em empresas como Arthur Andersen, BTG, Votorantim, Prosper, BVA e Delta Asset.</p>
+        <p>Especialista em DCM, com experiência em estruturação de fundos, M&A, crédito e reestruturação de dívidas.</p>
+      </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="Marcelo">
+    <div class="perfil-membroAzul ">
+    <!-- Marcelo -->
+    <div class="perfil-containerAzul">
+      <div class="perfil-foto">
+        <img src="imgEquipe/MarceloBraga.jpeg" alt="Marcelo Braga" />
+      </div>
+      <div class="perfil-infoAzul">
+        <h2>Marcelo Braga</h2>
+        <h3>Head de Créditos Imobiliários</h3>
+        <p>Mais de 20 anos de experiência em empresas como Turim, XP Inc., Opus e Banco Digimais. Consultor estratégico em family offices e ativos distressed.</p>
+        <p>Graduado em Economia pelo IBMEC-RJ.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="Iago">
+    <div class="perfil-membroBranco ">
+    <!-- Iago -->
+     <div class="perfil-containerBranco">
+      <div class="perfil-foto">
+        <img src="imgEquipe/IagoDantas.jpeg" alt="Iago Dantas" />
+      </div>
+      <div class="perfil-infoBranco">
+        <h2>Iago Dantas</h2>
+        <h3>Analista de Real Estate</h3>
+        <p>Graduando em Economia pela UFF. Passagem pela FGV Projetos com experiência em análise de viabilidade econômico-financeira.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="Lauro">
+    <div class="perfil-membroAzul ">
+    <!-- Lauro -->
+    <div class="perfil-containerAzul">
+      <div class="perfil-foto">
+        <img src="imgEquipe/LauroDantas.jpeg" alt="Lauro Alcântara" />
+      </div>
+      <div class="perfil-infoAzul">
+        <h2>Lauro Alcântara</h2>
+        <h3>Analista de Real Estate</h3>
+        <p>Formando em Marketing pela Unilasalle. Atuação com pesquisa de mercado, validação de produtos e análise imobiliária.</p>
+      </div>
+    </div>
+    </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 - FS Dantas Real Estate <br> Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

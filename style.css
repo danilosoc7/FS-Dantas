@@ -1,4 +1,1049 @@
 html {
-  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  max-width: 1550px;
+  margin: auto;
+  padding: 0.6rem 1rem;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: black;
+}
+
+.logo-link h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 17px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00297a;
+}
+
+.nav-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+  transform: scale(1.15);
+}
+
+.nav-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-links-mobile {
+  position: fixed;
+  top: 64px;
+  right: 0;
+  width: 220px;
+  height: calc(100vh - 64px);
+  background: white;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1.5rem;
+  gap: 1rem;
+  border-left: 1px solid #eee;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.nav-links-mobile.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+.nav-social {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  margin-right: 30px;
+}
+
+.nav-social a img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease;
+}
+
+.nav-social a:hover img {
+  transform: scale(1.15);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  z-index: 1100;
+  align-items: center;
+}
+
+.menu-toggle span {
+  background: #111;
+  border-radius: 3px;
+  height: 3px;
+  width: 25px;
+  display: block;
+}
+
+section {
+  scroll-margin-top: 55px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HOME SECTION */
+#home {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+#home img {
+  width: 100%;
+  align-items: bottom;
+  justify-content: bottom;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Quem Somos */
+#quem-somos {
+  background: url('imgTelas/FundoQuemSomos.svg') no-repeat center center / cover;
+  scroll-margin-top: 10px;
+  padding: 60px 40px 20px 40px;
+}
+
+.quem-somos-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.quem-somos-esquerda {
+  flex: 1;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.quem-somos-esquerda .section-title {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  color: #001138;
+}
+
+.quem-somos-esquerda p {
+  font-size: 1.32rem;
+  line-height: 1.7;
+  color: #000;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  text-align: justify;
+  font-family: 'Lato', sans-serif;
+}
+
+.quem-somos-esquerda p .destaque {
+  color: #00216d;
+  font-weight: bold;
+}
+
+.quem-somos-direita {
+  flex: 1;
+  background: linear-gradient(135deg, #001138 0%, #0036a3 100%);
+  border-radius: 20px;
+  border: 7px solid #000000;
+  padding: 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.info-bloco {
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 30px 20px;
+  border-left: 2px solid #d8d8d833;
+}
+
+.info-bloco:first-child,
+.info-bloco:nth-child(4) {
+  border-left: none;
+}
+
+.info-bloco:nth-child(2),
+.info-bloco:nth-child(5) {
+  padding-left: 60px;
+}
+
+.info-bloco:nth-child(3),
+.info-bloco:nth-child(6) {
+  padding-left: 40px;
+}
+
+
+.numero {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.numero1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.numero::before {
+  content: "+";
+  margin-right: 2px;
+  font-weight: bold;
+  font-size: inherit;
+  color: inherit;
+}
+
+
+/* O Que Fazemos */
+#o-que-fazemos {
+  background: linear-gradient(135deg, #001138 0%, #001f5c 100%);
+  background: url('imgTelas/FundoOQueFazemos.svg') no-repeat center center / cover;
+  padding: 50px 30px;
+  color: white;
+}
+
+.oque-fazemos-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.oque-fazemos-esquerda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-right: 45px;
+}
+
+.oque-fazemos-direita {
+  text-align: left;
+  padding-right: 40px;
+}
+
+.oque-fazemos-direita .section-title {
+  font-size: 4.0rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+
+.section-title .destaque {
+  color: #0091ff;
+}
+
+.oque-fazemos-direita p {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: #eee;
+  line-height: 1.6;
+  padding-top: 10px;
+}
+
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px linear-gradient(to right, #818898, #ffffff);
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0091ff;
+  text-align: center;
+}
+
+.card p {
+  font-size: 16px;
+  color: #f0f0f0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Cases */
+#cases {
+  background: url('imgTelas/FundoCases.svg') no-repeat bottom center / cover;
+  padding: 10px 20px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+#cases .section-title {
+  font-size: 3.0rem;
+  margin-bottom: 10px;
+  color: #001138;
+  font-weight: bold;
+}
+
+.cases-header {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.cases-title {
+  font-size: 3.8rem;
+  color: #001138;
+  line-height: 1.2;
+  font-family: 'Garamond';
+}
+
+.cases-title .highlight {
+  color: #00236a;
+  font-family: 'Garamond';
+}
+
+.cases-subtitle {
+  font-size: 1.2rem;
+  color: #2b2b2b;
+  max-width: 700px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 10px;
+}
+
+
+.cases-wrapper {
+  /* Layout do Cases */
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.cases-carousel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #001138 #e6e6e6;
+}
+
+.cases-carousel::-webkit-scrollbar {
+  height: 12px;
+  /* Altura da barra horizontal */
+}
+
+.cases-carousel::-webkit-scrollbar-track {
+  background: #f7f7f7;
+  /* Fundo da barra */
+  border-radius: 10px;
+}
+
+.cases-carousel::-webkit-scrollbar-thumb {
+  background-color: #001138;
+  /* Cor da Barra */
+  border-radius: 10px;
+  border: 2px solid #f2f2f2;
+  /* Cria Espaço ao Redor */
+}
+
+.cases-carousel::-webkit-scrollbar-thumb:hover {
+  background-color: #003194;
+  /* Tom mais claro ao passar o mouse */
+}
+
+.case-slide {
+  /* Case Individual */
+  flex: 0 0 calc(25% - 30px);
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.case-slide:hover {
+  /* Case Individual ao passar o Mouse */
+  transform: translateY(-6px);
+}
+
+.case-slide img {
+  /* Imagem Case Individual */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.case-info {
+  /* Informações do Case */
+  padding: 10px;
+  text-align: left;
+  background-color: #ffffff;
+  padding-left: 15px;
+}
+
+.case-info h3 {
+  /* Titulo do Case */
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #001138;
+}
+
+.case-info p {
+  /* Subtitulo do Case */
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #001138;
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: #00297a;
+}
+
+.carousel-arrow.left {
+  left: 0px;
+}
+
+.carousel-arrow.right {
+  right: 0px;
+}
+
+
+/* Equipe-Contato */
+#equipe-contato {
+  scroll-margin-top: 30px;
+  background: url('imgTelas/FundoEquipeContato.svg') no-repeat center center / cover;
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Alinha ao centro horizontal */
+}
+
+/* Equipe */
+.equipe-container h2 {
+  /* Titulo */
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.equipe-grid {
+  display: flex;
+  flex-wrap: nowrap; /* impede quebra de linha */
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  overflow-x: auto; /* rolagem horizontal se não couber */
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+}
+
+.equipe-card {
+  /* Cards Individual */
+  width: 250px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.equipe-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.equipe-card:hover {
+  /* Cards Individual ao passsar o Mouse */
+  transform: translateY(-6px);
+}
+
+.equipe-foto {
+  /* Foto */
+  width: 100%;
+  height: 260px;
+  position: top;
+  object-fit: cover;
+  border-bottom: 2px solid #001138;
+}
+
+.equipe-info {
+  /* Informações */
+  margin-bottom: 5px;
+}
+
+.equipe-info h3 {
+  /* Titulo do Card */
+  font-size: 1.4rem;
+  color: #001138;
+  margin-top: 5px;
+}
+
+.equipe-info p {
+  /* Subtitulo do Card */
+  margin-top: 7px;
+  font-size: 1rem;
+  color: #1c1c1c;
+  margin-bottom: 12px;
+}
+
+/* Contato */
+.contato-container {
+  /* Layout do Contato */
+  padding-top: 20px;
+}
+
+.contato-container .section-title {
+  /* Titulo */
+  font-size: 3rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contato-container p {
+  /* Informações de Contato */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contato-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+footer {
+  /* Footer */
+  text-align: center;
+  padding: 1rem 1rem;
+  background: #ffffff;
+  font-size: 1rem;
+}
+
+
+/* Layout Desktops, Smartphones... */
+
+@media (max-width: 1024px) {
+  #home {
+    background-image: url('imgTelas/FundoHome.svg') no-repeat center center / cover;
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #home img {
+    height: 29%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-social {
+    display: none;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .quem-somos-wrapper {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .quem-somos-esquerda .section-title {
+    font-size: 4.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .quem-somos-esquerda p {
+    margin-left: 0;
+    max-width: 100%;
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+
+  .quem-somos-direita {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 5px 20px;
+  }
+
+
+  .info-bloco:nth-child(2),
+  .info-bloco:nth-child(5),
+  .info-bloco:nth-child(3),
+  .info-bloco:nth-child(6) {
+    padding-left: 0;
+    border: none;
+  }
+
+  .oque-fazemos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .oque-fazemos-esquerda {
+    flex: 0 0 calc(50% - 15px);
+    margin-left: 15px;
+  }
+
+  .oque-fazemos-direita {
+    padding: 0 0;
+  }
+
+  .card {
+    margin-left: 25px;
+  }
+
+  .card-content h3 {
+    text-align: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .card-content p {
+    text-align: center;
+  }
+
+  .oque-fazemos-direita .section-title {
+    text-align: left;
+    flex-direction: column;
+  }
+
+  .oque-fazemos-direita p {
+    text-align: justify;
+    flex-direction: column;
+  }
+
+  .cases-wrapper {
+    max-width: 360px;
+  }
+
+  .case-slide {
+    flex: 0 0 calc(50% - 15px);
+    /* 2 por vez */
+    max-width: 315px;
+    border-radius: 20px;
+  }
+
+  .cases-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #001138 #e6e6e6;
+    max-width: 300px;
+  }
+
+  .carousel-arrow.left {
+    left: 0px;
+  }
+
+  .carousel-arrow.right {
+    left: 260px;
+  }
+
+  .equipe-info h3,
+  p {
+    text-decoration: none;
+    color: inherit;
+    /* opcional: mantém a cor do texto normal */
+  }
+
+  .contato-item {
+    margin-bottom: 20px;
+    align-items: left;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #home {
+    background-image: url('imgTelas/FundoHome.svg') no-repeat center center / cover;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: -450px;
+    margin-bottom: -50px;
+    margin-left: 0 0 auto;
+  }
+
+  #home img {
+    height: 29%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    justify-content: right;
+    max-width: 200px;
+    right: 1rem;
+    top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-logo {
+    align-items: left;
+    justify-content: left;
+  }
+
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    background: white;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1.5rem;
+    gap: 1rem;
+    border-left: 1px solid #eee;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+  }
+
+  .nav-links-mobile {
+    width: 200px;
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #001138;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #003194;
+  }
+
+  .nav-social {
+    display: none;
+  }
+
+  .nav-logo {
+    z-index: 1002;
+  }
+
+  #home img {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .marquee span {
+    font-size: 0.9rem;
+    margin: 0 1.5rem;
+  }
+
+  #quem-somos {
+    padding: 10px 20px;
+  }
+
+  .quem-somos-direita {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .quem-somos-esquerda .section-title {
+    font-size: 2.5em;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .quem-somos-esquerda p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .numero {
+    font-size: 2.5rem;
+    margin-right: 0;
+  }
+
+  .oque-fazemos-container {
+    flex-direction: column;
+  }
+
+  .oque-fazemos-esquerda {
+    grid-template-columns: 1fr;
+  }
+
+  .oque-fazemos-direita {
+    padding: 20px 0;
+  }
+
+  .oque-fazemos-direita .section-title {
+    text-align: center;
+  }
+
+  .oque-fazemos-direita p {
+    text-align: justify;
+    margin-right: 15px;
+    padding-bottom: 20px;
+  }
+
+  .case-slide {
+    flex: 0 0 100%;
+    /* 1 por vez */
+  }
+
+  .equipe-info h3,
+  p {
+    text-decoration: none;
+    color: inherit;
+    /* opcional: mantém a cor do texto normal */
+  }
+
+  .contato-container .section-title{
+    background-color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contato-item {
+    margin-bottom: 20px;
+    justify-content: left;
+    text-align: left;
+    align-items: left;
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem;
+  }
+
+  .logo-link h1 {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    top: 60px;
+    padding: 15px 0;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .menu-toggle span {
+    width: 22px;
+  }
+
+  #home {
+    padding: 2rem 0.5rem;
+    max-width: 480px;
+  }
+
+  .marquee span {
+    font-size: 0.8rem;
+    margin: 0 1rem;
+  }
+
+  .quem-somos-esquerda .section-title {
+    font-size: 3rem;
+  }
+
+  .quem-somos-esquerda p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .quem-somos-direita {
+    border-width: 8px;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .numero {
+    font-size: 2rem;
+  }
+
+  .info-bloco {
+    padding: 10px 5px;
+    font-size: 0.95rem;
+  }
+
+  .equipe-info h3,
+  p {
+    text-decoration: none;
+    color: inherit;
+    /* opcional: mantém a cor do texto normal */
+  }
 }
