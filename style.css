@@ -68,7 +68,7 @@ nav a:hover {
 .nav-logo {
   flex: 1;
   display: flex;
-    align-items: center;
+  align-items: center;
   justify-content: center;
   margin-left: 60px;
   transform: scale(1.15);
@@ -557,11 +557,13 @@ section {
 
 .equipe-grid {
   display: flex;
-  flex-wrap: nowrap; /* impede quebra de linha */
+  flex-wrap: nowrap;
+  /* impede quebra de linha */
   justify-content: center;
   gap: 20px;
   max-width: 100%;
-  overflow-x: auto; /* rolagem horizontal se não couber */
+  overflow-x: auto;
+  /* rolagem horizontal se não couber */
   padding-bottom: 10px;
   scroll-snap-type: x mandatory;
   scroll-padding: 1rem;
@@ -595,7 +597,7 @@ a {
 .equipe-foto {
   /* Foto */
   width: 100%;
-  height: 260px;
+  height: 280px;
   position: top;
   object-fit: cover;
   border-bottom: 2px solid #001138;
@@ -630,6 +632,7 @@ a {
 .contato-container .section-title {
   /* Titulo */
   font-size: 3rem;
+  padding-top: 100px;
   margin-bottom: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -667,7 +670,7 @@ footer {
 @media (max-width: 1024px) {
   #home {
     background-image: url('imgTelas/FundoHome.svg') no-repeat center center / cover;
-    height: 100px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
   }
@@ -797,24 +800,6 @@ footer {
 
   .carousel-arrow.right {
     left: 260px;
-  }
-
-  .equipe-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .equipe-card {
-    width: 90%;
-    /* ocupa a maior parte da largura da tela */
-    max-width: 350px;
-    /* largura máxima para manter um bom layout */
-  }
-
-  .equipe-foto {
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
   }
 
   .equipe-info h3,
@@ -980,6 +965,7 @@ footer {
   .equipe-grid {
     flex-direction: column;
     align-items: center;
+    /* centraliza os cards na coluna */
   }
 
   .equipe-card {
@@ -996,14 +982,13 @@ footer {
   }
 
   .equipe-info h3,
-  p {
-    text-decoration: none;
-    color: inherit;
-    /* opcional: mantém a cor do texto normal */
+  .equipe-info p {
+    text-align: center;
   }
 
-  .contato-container .section-title{
-    font-size: 1rem;
+
+  .contato-container .section-title {
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 10px;
   }
