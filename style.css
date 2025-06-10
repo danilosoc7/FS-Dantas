@@ -801,7 +801,7 @@ footer {
 
   .equipe-grid {
     flex-direction: column;
-    align-items: center:
+    align-items: center;
   }
 
   .equipe-card {
@@ -979,7 +979,7 @@ footer {
 
   .equipe-grid {
     flex-direction: column;
-    align-items: center:
+    align-items: center;
   }
 
   .equipe-card {
@@ -1003,7 +1003,6 @@ footer {
   }
 
   .contato-container .section-title{
-    background-color: white;
     font-size: 1rem;
     text-align: center;
     margin-bottom: 10px;
