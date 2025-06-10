@@ -84,6 +84,7 @@ nav a:hover {
 }
 
 .nav-links {
+  margin-left: 420px;
   flex: 2;
   display: flex;
   justify-content: center;
