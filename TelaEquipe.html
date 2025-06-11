@@ -114,6 +114,45 @@ footer {
   color: #000;
   font-size: 1rem;
 }
+
+    
+/* Responsividade */
+@media (max-width: 768px) {
+  .perfil-containerAzul,
+  .perfil-containerBranco {
+    flex-direction: column;
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .perfil-foto img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .perfil-infoAzul,
+  .perfil-infoBranco {
+    max-width: 100%;
+  }
+
+  .perfil-infoAzul h2,
+  .perfil-infoBranco h2 {
+    font-size: 2rem;
+  }
+
+  .perfil-infoAzul h3,
+  .perfil-infoBranco h3 {
+    font-size: 1.3rem;
+  }
+
+  .perfil-infoAzul p,
+  .perfil-infoBranco p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}    
   </style>
 </head>
 
